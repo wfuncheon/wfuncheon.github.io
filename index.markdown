@@ -7,7 +7,7 @@ permalink: /
 ---
 # About Me
 
-I am a software engineer located around Boston, MA who is passionate about cool, new technology.
+I am a software engineer located around Boston, MA who is passionate about cool technology.
 
 Here I post about things that interest me and projects that I'm working on.
 
