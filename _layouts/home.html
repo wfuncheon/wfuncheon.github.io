@@ -3,5 +3,86 @@ layout: base
 ---
 
 <div class="home">
-  {{ content }}
+
+  <!-- Terminal Hero -->
+  <section class="fade-in">
+    <div class="terminal-window">
+      <div class="terminal-bar">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-label">bill@williamfuncheon.com — ~</span>
+      </div>
+      <div class="terminal-body">
+        <p><span class="prompt">~$</span> whoami</p>
+        <p class="output-em">Bill Funcheon</p>
+        <p class="output">Software Engineer &mdash; Boston, MA</p>
+        <p>&nbsp;</p>
+        <p><span class="prompt">~$</span> cat interests.txt</p>
+        <p class="output">distributed systems, open source, building things</p>
+        <p>&nbsp;</p>
+        <p><span class="prompt">~$</span> <span class="cursor">&#9607;</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="fade-in">
+    <p class="section-label">// about</p>
+    <div class="about-body prose">
+      {{ content }}
+    </div>
+  </section>
+
+  <!-- Projects -->
+  {%- if site.data.projects and site.data.projects.size > 0 -%}
+  <section class="fade-in">
+    <p class="section-label">// projects</p>
+    <div class="project-grid">
+      {%- for project in site.data.projects -%}
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-name">{{ project.name | escape }}</h3>
+          {%- if project.url -%}
+          <a class="project-link-icon" href="{{ project.url }}" target="_blank" rel="noopener">
+            {{ project.link_label | default: "GitHub ↗" }}
+          </a>
+          {%- endif -%}
+        </div>
+        <p class="project-desc">{{ project.description | escape }}</p>
+        {%- if project.tech -%}
+        <div class="project-tags">
+          {%- for t in project.tech -%}
+          <span class="tag">{{ t | escape }}</span>
+          {%- endfor -%}
+        </div>
+        {%- endif -%}
+      </div>
+      {%- endfor -%}
+    </div>
+  </section>
+  {%- endif -%}
+
+  <!-- Writing -->
+  {%- assign posts = site.posts | limit: 3 -%}
+  <section class="fade-in">
+    <p class="section-label">// writing</p>
+    {%- if posts.size > 0 -%}
+    <ul class="post-list">
+      {%- assign date_format = "%b %-d, %Y" -%}
+      {%- for post in posts -%}
+      <li>
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- else -%}
+    <div class="blog-empty">
+      <span>posts incoming</span>
+      <span class="hint">// check back soon</span>
+    </div>
+    {%- endif -%}
+  </section>
+
 </div>

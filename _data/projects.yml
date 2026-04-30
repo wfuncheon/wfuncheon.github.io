@@ -1,0 +1,19 @@
+# Add your projects here. Each entry supports:
+#   name:        Project title
+#   description: One or two sentence description
+#   url:         Link to GitHub repo or live site
+#   link_label:  Text for the link (default: "GitHub ↗")
+#   tech:        List of technologies / languages
+#
+# Example:
+# - name: "My Project"
+#   description: "What it does in a sentence."
+#   url: "https://github.com/wfuncheon/my-project"
+#   link_label: "GitHub ↗"
+#   tech: [Go, PostgreSQL, Docker]
+
+# - name: "williamfuncheon.com"
+#   description: "This site — a minimal personal website and blog built with Jekyll and hosted on GitHub Pages."
+#   url: "https://github.com/wfuncheon/wfuncheon.github.io"
+#   link_label: "GitHub ↗"
+#   tech: [Jekyll, Ruby, SCSS]

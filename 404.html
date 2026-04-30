@@ -1,25 +1,13 @@
 ---
 permalink: /404.html
-layout: default
+layout: base
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<div class="error-page">
+  <div class="error-terminal">
+    <p><span class="err">error:</span> 404 — page not found</p>
+    <p><span class="path">path: {{ page.url }}</span></p>
+    <p>&nbsp;</p>
+    <p><span class="prompt">~$</span> cd <a href="{{ '/' | relative_url }}" class="project-link-icon">~</a></p>
+  </div>
 </div>
