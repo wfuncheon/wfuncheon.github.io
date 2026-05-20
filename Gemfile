@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby File.read(".ruby-version").strip
+ruby ">= 3.3.0", "< 3.4"
 
 gem "jekyll", "~> 4.4"
 gem "minima", "~> 2.5"
