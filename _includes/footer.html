@@ -1,6 +1,6 @@
 <footer class="site-footer">
   <div class="wrapper">
-    <span class="footer-copy">&copy; {{ 'now' | date: "%Y" }} Bill Funcheon</span>
+    <span class="footer-copy">&copy; {{ 'now' | date: "%Y" }} William Funcheon</span>
     <div class="footer-links">
       {%- if site.github_username -%}
         <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
@@ -9,7 +9,9 @@
         <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a>
       {%- endif -%}
       {%- if site.email -%}
-        <a href="mailto:bfunch13@gmail.com">Email</a>
+        {%- assign email_user = site.email | split: "@" | first -%}
+        {%- assign email_domain = site.email | split: "@" | last -%}
+        <a href="mailto:{{ email_user }}&#64;{{ email_domain }}">Email</a>
       {%- endif -%}
     </div>
   </div>
